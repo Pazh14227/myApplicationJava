@@ -25,6 +25,17 @@ public class MainActivity extends AppCompatActivity {
         //setting action to intent - implicit intent
         intent.setAction(Intent.ACTION_SEND);
 
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+
+        //adding data to intent
+        intent.putExtra(EXTRA_MESSAGE, message);
+
+        //type of data in which the action is performed
+        intent.setType("text/plain");
+
+
+        //This is to show the chooser dialog box
         Intent chooser = Intent.createChooser(intent, "Share with");
 
         //chekcing whether the android system has that action or any other apps having similar action is there
@@ -35,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
             intent = new Intent(this, DisplayMessageActivity.class);
 
             //getting the data from the text field
-            EditText editText = (EditText) findViewById(R.id.editText);
-            String message = editText.getText().toString();
+            EditText editText2 = (EditText) findViewById(R.id.editText);
+            String message2 = editText.getText().toString();
 
             //adding data to intent
             intent.putExtra(EXTRA_MESSAGE, message);
