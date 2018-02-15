@@ -14,14 +14,14 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView4);
-        textView.setText(message);
+        textView.setText(intent.getData().toString());
 
         //TODO - displaying intent action
-        intent.getAction();
+        //intent.getAction();
     }
 
 }
